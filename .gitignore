@@ -3,3 +3,5 @@
 *.deb
 debian/DEBIAN/control
 debian/lib/modules/
+Packages.gz
+override
