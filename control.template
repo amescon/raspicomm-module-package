@@ -1,0 +1,7 @@
+Package: [PACKAGENAME]
+Version: 1.0
+Essential: no
+Architecture: all
+Maintainer: Martin Kramer <martin.kramer@amescon.com>
+Provides: [PACKAGENAME]
+Description: RasPiComm Rs485 tty driver, creates the /dev/RPC0 to access the Rs-485 device

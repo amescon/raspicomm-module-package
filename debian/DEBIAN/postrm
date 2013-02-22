@@ -1,0 +1,4 @@
+#! /bin/sh
+
+# unload the module
+rmmod raspicommrs485

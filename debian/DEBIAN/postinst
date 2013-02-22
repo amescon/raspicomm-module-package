@@ -1,0 +1,10 @@
+#! /bin/sh
+
+# make module raspicommrs485 available for modprobe
+depmod
+
+# load the module
+modprobe raspicommrs485
+
+# add the module to /etc/modules so that it gets loaded on system startup
+# TODO append "raspicommrs485" to /etc/modules
