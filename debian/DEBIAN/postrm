@@ -1,4 +1,10 @@
-#! /bin/sh
+#!/bin/sh
 
 # unload the module
 rmmod raspicommrs485
+
+# update list of modules for modprobe
+depmod
+
+# remove the raspicommrs485 kernel module from load at startup
+sed "/raspicommrs485/d" /etc/modules -i
