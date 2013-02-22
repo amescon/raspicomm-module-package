@@ -15,9 +15,6 @@ KODIR="${MODULESDIR}/${VERSION}"
 # remove old debian/lib/modules folders
 rm -rf ${MODULESDIR}
 
-# remove the old packages
-# rm *.deb
-
 # create the folder for the specified version if it does not exist
 if [ ! -d $KODIR ] ; then
   mkdir -p $KODIR
