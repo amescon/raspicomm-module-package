@@ -6,8 +6,15 @@ else
   VERSION=$1
 fi
 
+if [ -z $2 ] ; then
+  echo No Subversion specified as an argument, using version as name
+  NAME="$VERSION"
+else
+	NAME=$1$2
+fi
+
 # execute make for the module
-make -C ../raspicomm-module ${VERSION}
+make -C ../raspicomm-module ${NAME}
 
 MODULESDIR="./debian/lib/modules"
 KODIR="${MODULESDIR}/${VERSION}"
@@ -24,7 +31,7 @@ fi
 cp ../raspicomm-module/raspicommrs485.ko ${KODIR}/raspicommrs485.ko
 
 # create the package name
-PACKAGENAME="raspicommrs485-${VERSION}"
+PACKAGENAME="raspicommrs485-${NAME}"
 
 # create the package configuration file based upon the template debian/DEBIAN/control
 sed "s/\[PACKAGENAME\]/${PACKAGENAME}/" control.template > debian/DEBIAN/control
